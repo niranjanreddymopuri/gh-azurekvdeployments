@@ -8,7 +8,12 @@ jobs:
       - name: Update the runner with packages
         run: |
           sudo apt-get update
+          sudo apt-get install -y powershell
 
       - name: Install Azure cli modules
         run: |
             curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      - name: Check Azure CLI and powershell version installed
+        run: |
+          echo "Powershell version is `pwsh --version`"
+          echo "Azure cli version is `az --version`"
