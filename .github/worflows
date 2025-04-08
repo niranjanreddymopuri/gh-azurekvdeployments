@@ -1,0 +1,10 @@
+name: Azure artifacts dev publishing
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Install AZ cli modules
+        run: |
+          sudo apt-get update && sudo apt-get upgrade
