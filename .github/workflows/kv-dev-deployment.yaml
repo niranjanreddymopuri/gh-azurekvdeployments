@@ -5,6 +5,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Install AZ cli modules
+      - name: Update the runner with packages
         run: |
-          sudo apt-get update && sudo apt-get upgrade
+          sudo apt-get update
+
+      - name: Install Azure cli modules
+        run: |
+            curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
